@@ -1,0 +1,18 @@
+[package]
+name = "aoc2025"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "aoc2025"
+path = "src/lib.rs"
+
+[[bin]]
+name = "run"
+path = "src/bin/run.rs"
+
+[build-dependencies]
+itertools = "0.14.0"
+
+[dependencies]
+paste = "1.0.15"
