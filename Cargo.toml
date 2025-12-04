@@ -15,5 +15,6 @@ path = "src/bin/run.rs"
 itertools = "0.14.0"
 
 [dependencies]
+im = "15.1.0"
 itertools = "0.14.0"
 paste = "1.0.15"
