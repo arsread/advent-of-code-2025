@@ -29,7 +29,7 @@ pub fn solve_2(input: Vec<String>) -> String {
                 .fold(0, |acc, _, _| acc + 1)
                 .into_iter()
                 .fold::<(_, im::HashMap<_,_>), _>(
-                    (im::vector![], cnts.clone()), 
+                    (im::vector![], cnts.to_owned()),
                     |(queue, cur_cnts), ((x, y), minus)| {
                         if let Some(cur_cnt) = cur_cnts.get(&(x, y)) {
                             let nxt_cnt = cur_cnt - minus;
