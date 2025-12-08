@@ -1,4 +1,7 @@
-pub fn solve_1(input: Vec<String>) -> String {
+use crate::input::InputType;
+
+
+pub fn solve_1(input: Vec<String>, _ty: InputType) -> String {
     input
         .into_iter()
         .map(|l| {
@@ -15,7 +18,7 @@ pub fn solve_1(input: Vec<String>) -> String {
         .to_string()
 }
 
-pub fn solve_2(input: Vec<String>) -> String {
+pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
     input
         .into_iter()
         .map(|l| {

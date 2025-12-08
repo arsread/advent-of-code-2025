@@ -37,7 +37,8 @@ fn main() {
 
     let registrations = [
         includes,
-        vec![String::from("pub const ALL_DAYS: &[(u32, fn(Vec<String>)->String, fn(Vec<String>)->String)] = &[")],
+        vec![String::from("use crate::input::InputType;")],
+        vec![String::from("pub const ALL_DAYS: &[(u32, fn(Vec<String>, InputType)->String, fn(Vec<String>, InputType)->String)] = &[")],
         days_maps,
         vec![String::from("];\n")],
     ].concat().join("\n");

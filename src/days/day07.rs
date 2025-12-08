@@ -1,7 +1,10 @@
 use im::{HashMap, HashSet};
 use itertools::Itertools;
 
-pub fn solve_1(input: Vec<String>) -> String {
+use crate::input::InputType;
+
+
+pub fn solve_1(input: Vec<String>, _ty: InputType) -> String {
     (0..input.len())
         .fold(
             (start_pos_set(&input), 0),
@@ -18,7 +21,7 @@ pub fn solve_1(input: Vec<String>) -> String {
         .to_string()
 }
 
-pub fn solve_2(input: Vec<String>) -> String {
+pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
     (0..input.len())
         .fold(
             HashMap::from(vec![(start_pos_set(&input), 1)]),

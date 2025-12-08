@@ -1,7 +1,10 @@
+use crate::input::InputType;
+
+
 const INIT_POS: i32 = 50;
 const DIAL_SIZE: i32 = 100;
 
-pub fn solve_1(input: Vec<String>) -> String {
+pub fn solve_1(input: Vec<String>, _ty: InputType) -> String {
     let (_, ans) = input
         .into_iter()
         .fold((INIT_POS, 0), |(pos, cnt), ins| {
@@ -16,7 +19,7 @@ pub fn solve_1(input: Vec<String>) -> String {
     ans.to_string()
 }
 
-pub fn solve_2(input: Vec<String>) -> String {
+pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
     let (_, ans) = input
         .into_iter()
         .fold((INIT_POS, 0), |(pos, cnt), ins| {

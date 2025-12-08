@@ -1,7 +1,9 @@
 use itertools::izip;
 
+use crate::input::InputType;
 
-pub fn solve_1(input: Vec<String>) -> String {
+
+pub fn solve_1(input: Vec<String>, _ty: InputType) -> String {
     let rotated = rotate(
         input
             .iter()
@@ -12,7 +14,7 @@ pub fn solve_1(input: Vec<String>) -> String {
     calc(input.iter().last().unwrap(), rotated).to_string()
 }
 
-pub fn solve_2(input: Vec<String>) -> String {
+pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
     let rotated: Vec<String> = rotate(input
             .iter()
             .take(input.len()-1)

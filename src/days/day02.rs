@@ -1,8 +1,10 @@
 use itertools::Itertools;
 use std::collections::HashSet;
 
+use crate::input::InputType;
 
-pub fn solve_1(input: Vec<String>) -> String {
+
+pub fn solve_1(input: Vec<String>, _ty: InputType) -> String {
     assert_eq!(input.len(), 1);
     let ans = input[0]
         .split(",")
@@ -31,7 +33,7 @@ fn check(num: &String) -> bool {
 }
 
 // Brute force; probably can be simplified by reversed number generation
-pub fn solve_2(input: Vec<String>) -> String {
+pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
     assert_eq!(input.len(), 1);
     let ans = input[0]
         .split(",")

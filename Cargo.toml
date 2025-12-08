@@ -17,4 +17,5 @@ itertools = "0.14.0"
 [dependencies]
 im = "15.1.0"
 itertools = "0.14.0"
+memoize = "0.5.1"
 paste = "1.0.15"
