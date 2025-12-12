@@ -62,20 +62,13 @@ pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
                         .map(|i| if pos.contains(&i) { 1 } else {0})
                         .collect()
                 }).collect();
-           let n = vectors.len();
-           let m = target.len();
-
-
            let pv = ProblemVariables::new();
-
-           let (pv, xs) = (0..n).fold((pv, Vec::new()), |(mut pv, mut xs), _| {
+           let (pv, xs) = (0..vectors.len()).fold((pv, Vec::new()), |(mut pv, mut xs), _| {
                xs.push(pv.add(variable().integer().min(0)));
                (pv, xs)
            });
-
            let objective = xs.iter().cloned().sum::<Expression>();
-
-           let model = (0..m).fold(
+           let model = (0..target.len()).fold(
                pv.minimise(objective).using(default_solver),
                |model_acc, j| {
                    let expr = xs.iter()
@@ -85,7 +78,6 @@ pub fn solve_2(input: Vec<String>, _ty: InputType) -> String {
                    model_acc.with(constraint!(expr == target[j] as f64))
                },
            );
-
             let solution = model.solve().unwrap();
             xs.iter().map(|x| solution.value(*x).round() as usize).sum::<usize>()
         })
