@@ -7,8 +7,8 @@ pub fn run(day: u32, ty: InputType) {
 
     if let Some((_, solve1, solve2)) = ALL_DAYS.iter().find(|(d, _, _)| *d == day) {
         println!("=== Day {} ===", day);
-        println!("Part 1: {}", solve1(input_1.clone(), ty.clone()));
-        println!("Part 2: {}", solve2(input_2.clone(), ty.clone()));
+        println!("Part 1: {}", solve1(input_1, ty.clone()));
+        println!("Part 2: {}", solve2(input_2, ty.clone()));
     } else {
         println!("Day {} not implemented.", day);
     }
